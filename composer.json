@@ -2,7 +2,7 @@
     "name": "mage2kishan/module-producttabs",
     "description": "Product detail page tab customization for Magento 2. Supports horizontal/vertical tab styles, fade/slide/none animations, and mobile accordion. Compatible with Hyva and Luma themes.",
     "type": "magento2-module",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "license": "proprietary",
     "require": {
         "php": "^8.1",
@@ -35,13 +35,5 @@
             "email": "kishansavaliyakb@gmail.com",
             "homepage": "https://kishansavaliya.com"
         }
-    ],
-    "extra": {
-        "map": [
-            [
-                "*",
-                "Panth/ProductTabs"
-            ]
-        ]
-    }
+    ]
 }
