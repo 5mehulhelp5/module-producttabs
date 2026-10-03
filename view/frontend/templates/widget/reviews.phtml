@@ -1,0 +1,32 @@
+<?php
+/**
+ * @var \Magento\Framework\View\Element\Template $block
+ * @var \Magento\Framework\Escaper $escaper
+ */
+
+$viewModel = $block->getData('view_model');
+$productId = (int) $block->getData('product_id');
+if (!$viewModel instanceof \Panth\ProductTabs\ViewModel\Tabs || $productId <= 0) {
+    return;
+}
+$config = $block->getData('panth_config');
+$label = $config ? (string) $config->getReviewsLabel() : (string) __('Reviews');
+$reviews = $viewModel->getReviewItems($productId);
+$reviewCount = $viewModel->getApprovedReviewCount($productId);
+?>
+<div class="panth-tabs panth-tabs--reviews-widget">
+    <h2 class="panth-tabs__reviews-title"><?= $escaper->escapeHtml($label) ?><?php if ($reviewCount > 0): ?> (<?= (int) $reviewCount ?>)<?php endif; ?></h2>
+    <?php if (empty($reviews)): ?>
+    <p class="panth-tabs__reviews-empty"><?= $escaper->escapeHtml(__('There are no reviews for this product yet.')) ?></p>
+    <?php else: ?>
+    <ol class="panth-tabs__reviews">
+        <?php foreach ($reviews as $review): ?>
+        <li class="panth-tabs__review">
+            <strong class="panth-tabs__review-title"><?= $escaper->escapeHtml($review['title']) ?></strong>
+            <div class="panth-tabs__review-detail"><?= /** @noEscape */ nl2br($escaper->escapeHtml($review['detail'])) ?></div>
+            <p class="panth-tabs__review-author"><?= $escaper->escapeHtml(__('Review by %1', $review['nickname'])) ?></p>
+        </li>
+        <?php endforeach; ?>
+    </ol>
+    <?php endif; ?>
+</div>

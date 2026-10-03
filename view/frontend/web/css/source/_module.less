@@ -1,0 +1,223 @@
+/**
+ * Panth ProductTabs - Luma LESS
+ * Compiled into styles-m.css by Magento's LESS compilation.
+ * Uses px units, DM Sans font, and Panth design system colors.
+ *
+ * Copyright © Panth Infotech. All rights reserved.
+ */
+
+& when (@media-common = true) {
+
+    // =============================================
+    //  Base Container
+    // =============================================
+    .panth-product-tabs {
+        font-family: 'DM Sans', sans-serif !important;
+        margin: 32px 0 48px !important;
+    }
+
+    // =============================================
+    //  Horizontal Tab Navigation
+    // =============================================
+    .panth-tabs-horizontal .panth-tabs-nav {
+        display: flex !important;
+        border-bottom: 2px solid #E5E7EB !important;
+        gap: 0 !important;
+        overflow-x: auto !important;
+    }
+
+    .panth-tabs-horizontal .panth-tab-btn {
+        padding: 12px 24px !important;
+        font-size: 14px !important;
+        font-weight: 600 !important;
+        color: #525252 !important;
+        background: transparent !important;
+        border: none !important;
+        border-bottom: 2px solid transparent !important;
+        margin-bottom: -2px !important;
+        cursor: pointer !important;
+        white-space: nowrap !important;
+        transition: all 300ms ease !important;
+        font-family: 'DM Sans', sans-serif !important;
+    }
+
+    .panth-tabs-horizontal .panth-tab-btn:hover {
+        color: #171717 !important;
+        background: #F9FAFB !important;
+    }
+
+    .panth-tabs-horizontal .panth-tab-btn.active {
+        color: #0D9488 !important;
+        border-bottom-color: #0D9488 !important;
+    }
+
+    // =============================================
+    //  Vertical Tab Navigation
+    // =============================================
+    .panth-tabs-vertical .panth-tabs-vertical-wrapper {
+        display: flex !important;
+        gap: 0 !important;
+    }
+
+    .panth-tabs-vertical .panth-tabs-nav {
+        display: flex !important;
+        flex-direction: column !important;
+        flex-shrink: 0 !important;
+        width: 240px !important;
+        border-right: 2px solid #E5E7EB !important;
+    }
+
+    .panth-tabs-vertical .panth-tab-btn {
+        padding: 14px 20px !important;
+        font-size: 14px !important;
+        font-weight: 600 !important;
+        color: #525252 !important;
+        background: transparent !important;
+        border: none !important;
+        border-left: 2px solid transparent !important;
+        margin-right: -2px !important;
+        cursor: pointer !important;
+        text-align: left !important;
+        transition: all 300ms ease !important;
+        font-family: 'DM Sans', sans-serif !important;
+    }
+
+    .panth-tabs-vertical .panth-tab-btn:hover {
+        color: #171717 !important;
+        background: #F9FAFB !important;
+    }
+
+    .panth-tabs-vertical .panth-tab-btn.active {
+        color: #0D9488 !important;
+        border-left-color: #0D9488 !important;
+        background: #F9FAFB !important;
+    }
+
+    .panth-tabs-vertical .panth-tabs-content {
+        flex: 1 !important;
+        min-width: 0 !important;
+        padding-left: 24px !important;
+    }
+
+    // =============================================
+    //  Tab Panels
+    // =============================================
+    .panth-tab-panel {
+        display: none !important;
+    }
+
+    .panth-tab-panel.active {
+        display: block !important;
+    }
+
+    .panth-tab-panel-inner {
+        padding: 24px 0 !important;
+        font-size: 14px !important;
+        line-height: 1.7 !important;
+        color: #171717 !important;
+    }
+
+    .panth-tab-panel-inner table {
+        width: 100% !important;
+        border-collapse: collapse !important;
+    }
+
+    .panth-tab-panel-inner table th,
+    .panth-tab-panel-inner table td {
+        padding: 10px 16px !important;
+        border-bottom: 1px solid #E5E7EB !important;
+        text-align: left !important;
+        font-size: 14px !important;
+    }
+
+    .panth-tab-panel-inner table th {
+        font-weight: 600 !important;
+        color: #171717 !important;
+        width: 35% !important;
+    }
+
+    .panth-tab-panel-inner table td {
+        color: #525252 !important;
+    }
+
+    // =============================================
+    //  Accordion (Mobile)
+    // =============================================
+    .panth-accordion-btn {
+        display: none !important;
+        width: 100% !important;
+        padding: 14px 16px !important;
+        font-size: 14px !important;
+        font-weight: 600 !important;
+        color: #171717 !important;
+        background: #FFFFFF !important;
+        border: none !important;
+        border-bottom: 1px solid #E5E7EB !important;
+        cursor: pointer !important;
+        text-align: left !important;
+        font-family: 'DM Sans', sans-serif !important;
+        transition: all 300ms ease !important;
+    }
+
+    .panth-accordion-btn .panth-accordion-icon {
+        transition: transform 300ms ease !important;
+    }
+
+    .panth-accordion-btn.active {
+        color: #0D9488 !important;
+    }
+
+    .panth-accordion-btn.active .panth-accordion-icon {
+        transform: rotate(180deg) !important;
+    }
+}
+
+// =============================================
+//  Mobile (< 768px)
+// =============================================
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .panth-tabs-nav {
+        display: none !important;
+    }
+
+    .panth-accordion-btn {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+    }
+
+    .panth-tabs-vertical .panth-tabs-vertical-wrapper {
+        flex-direction: column !important;
+    }
+
+    .panth-tabs-vertical .panth-tabs-content {
+        padding-left: 0 !important;
+    }
+
+    .panth-tab-panel-inner {
+        padding: 16px !important;
+    }
+}
+
+// =============================================
+//  Tablet (768px - 1023px)
+// =============================================
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .panth-tabs-vertical .panth-tabs-nav {
+        width: 200px !important;
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+    .panth-tabs-vertical .panth-tabs-nav {
+        width: 240px !important;
+    }
+}
+
+& when (@media-common = true) {
+    .panth-product-tabs .panth-tabs__btn:focus-visible,
+    .panth-product-tabs .panth-tabs__acc-btn:focus-visible {
+        outline: 2px solid #0d9488 !important;
+        outline-offset: 2px;
+    }
+}

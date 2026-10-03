@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Panth Infotech. All rights reserved.
+ *
+ * Product Tabs widget definition.
+ */
+-->
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="panth_product_tabs" class="Panth\ProductTabs\Block\Widget\Tabs">
+        <label translate="true">Panth Product Tabs</label>
+        <description translate="true">Customized product detail page tabs with configurable style and animation</description>
+        <parameters>
+            <parameter name="tab_style" xsi:type="select" visible="true" sort_order="10">
+                <label translate="true">Tab Style</label>
+                <options>
+                    <option name="horizontal" value="horizontal">
+                        <label translate="true">Horizontal</label>
+                    </option>
+                    <option name="vertical" value="vertical">
+                        <label translate="true">Vertical</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="animation_type" xsi:type="select" visible="true" sort_order="20">
+                <label translate="true">Animation Type</label>
+                <options>
+                    <option name="fade" value="fade">
+                        <label translate="true">Fade</label>
+                    </option>
+                    <option name="slide" value="slide">
+                        <label translate="true">Slide</label>
+                    </option>
+                    <option name="none" value="none">
+                        <label translate="true">None</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="product_id" xsi:type="text" visible="true" sort_order="30">
+                <label translate="true">Product ID for Reviews</label>
+                <description translate="true">Shows the approved reviews of this product when the widget has no product tabs to render, for example in a CMS page or block.</description>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>

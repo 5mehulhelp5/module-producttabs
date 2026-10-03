@@ -1,0 +1,14 @@
+{
+  "product-tabs-primary": "#0D9488",
+  "product-tabs-primary-hover": "#0F766E",
+  "product-tabs-bg": "#FFFFFF",
+  "product-tabs-border": "#E5E7EB",
+  "product-tabs-text": "#171717",
+  "product-tabs-text-muted": "#6B7280",
+  "product-tabs-active-border": "#0D9488",
+  "product-tabs-hover-bg": "#F9FAFB",
+  "product-tabs-content-bg": "#FFFFFF",
+  "product-tabs-font-family": "'DM Sans', sans-serif",
+  "product-tabs-border-radius": "8px",
+  "product-tabs-transition-speed": "300ms"
+}
