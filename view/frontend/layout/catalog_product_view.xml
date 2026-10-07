@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Panth Infotech. All rights reserved.
+ *
+ * Overrides product.info.details template with Panth custom tab template.
+ * The template is switched by the ViewModel based on Hyva/Luma detection.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="product.info.details" template="Panth_ProductTabs::tabs.phtml">
+            <arguments>
+                <argument name="panth_config" xsi:type="object">Panth\ProductTabs\ViewModel\Config</argument>
+                <argument name="view_model" xsi:type="object">Panth\ProductTabs\ViewModel\Tabs</argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>

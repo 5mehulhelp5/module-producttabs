@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Panth Infotech. All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <panth_producttabs>
+            <general>
+                <enabled>1</enabled>
+                <sticky_tabs>0</sticky_tabs>
+                <lazy_load_reviews>0</lazy_load_reviews>
+                <default_tab>first</default_tab>
+            </general>
+            <design>
+                <tab_style>horizontal</tab_style>
+                <animation_type>fade</animation_type>
+                <show_tab_icon>1</show_tab_icon>
+                <first_tab_open>1</first_tab_open>
+                <accordion_on_mobile>1</accordion_on_mobile>
+                <mobile_behavior>accordion</mobile_behavior>
+            </design>
+            <labels>
+                <description_label>Description</description_label>
+                <more_info_label>More Information</more_info_label>
+                <reviews_label>Reviews</reviews_label>
+            </labels>
+            <visibility>
+                <show_description>1</show_description>
+                <show_more_info>1</show_more_info>
+                <show_reviews>1</show_reviews>
+            </visibility>
+            <sort_order>
+                <description_order>10</description_order>
+                <more_info_order>20</more_info_order>
+                <reviews_order>30</reviews_order>
+            </sort_order>
+        </panth_producttabs>
+    </default>
+</config>

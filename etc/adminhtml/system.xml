@@ -1,0 +1,197 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Panth ProductTabs System Configuration
+ *
+ * @package Panth_ProductTabs
+ * @author Panth
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="panth" translate="label" sortOrder="400">
+            <label>Panth Extensions</label>
+        </tab>
+        <section id="panth_producttabs" translate="label" sortOrder="141"
+                 showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Product Tabs</label>
+            <tab>panth</tab>
+            <resource>Panth_ProductTabs::config</resource>
+
+            <!-- General Settings -->
+            <group id="general" translate="label comment" sortOrder="10"
+                   showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Settings</label>
+                <comment><![CDATA[Customizes the product detail page tabs (description, reviews, additional info, etc.).]]></comment>
+                <field id="enabled" translate="label comment" type="select" sortOrder="10"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Module</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable or disable the Product Tabs module</comment>
+                </field>
+                <field id="sticky_tabs" translate="label comment" type="select" sortOrder="20"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sticky Tab Navigation</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Make tab navigation sticky on scroll</comment>
+                </field>
+                <field id="lazy_load_reviews" translate="label comment" type="select" sortOrder="30"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Lazy Load Reviews</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Defer Reviews tab JavaScript initialization until the tab is clicked</comment>
+                </field>
+                <field id="default_tab" translate="label comment" type="select" sortOrder="40"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Default Open Tab</label>
+                    <source_model>Panth\ProductTabs\Model\Config\Source\DefaultTab</source_model>
+                    <comment>Select which tab should be open by default on page load</comment>
+                </field>
+            </group>
+
+            <!-- Design Settings -->
+            <group id="design" translate="label comment" sortOrder="20"
+                   showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Design Settings</label>
+                <comment><![CDATA[Configure the look and feel of product detail page tabs.]]></comment>
+                <field id="tab_style" translate="label comment" type="select" sortOrder="10"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Tab Style</label>
+                    <source_model>Panth\ProductTabs\Model\Config\Source\TabStyle</source_model>
+                    <comment>Choose between horizontal (top) or vertical (side) tab layout</comment>
+                </field>
+                <field id="animation_type" translate="label comment" type="select" sortOrder="20"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Animation Type</label>
+                    <source_model>Panth\ProductTabs\Model\Config\Source\AnimationType</source_model>
+                    <comment>Animation effect when switching between tabs</comment>
+                </field>
+                <field id="mobile_behavior" translate="label comment" type="select" sortOrder="30"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Mobile Behavior</label>
+                    <source_model>Panth\ProductTabs\Model\Config\Source\MobileBehavior</source_model>
+                    <comment>Choose accordion or horizontal scroll tab strip on mobile devices</comment>
+                </field>
+                <field id="first_tab_open" translate="label comment" type="select" sortOrder="40"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Open First Tab by Default</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Open the Default Tab when the page loads. When set to No, all panels start closed until a tab is selected or a tab is opened through the URL hash.</comment>
+                </field>
+                <field id="accordion_on_mobile" translate="label comment" type="select" sortOrder="50"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Accordion on Mobile</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Switch to accordion layout on mobile devices (recommended for better UX). When set to No, mobile devices show the horizontal scroll tab strip whatever Mobile Behavior is set to.</comment>
+                </field>
+                <field id="show_tab_icon" translate="label comment" type="select" sortOrder="60"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Tab Icons</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Show an icon before each tab title (built-in icon, or the Icon Class of a custom tab).</comment>
+                </field>
+            </group>
+
+            <!-- Tab Labels -->
+            <group id="labels" translate="label comment" sortOrder="30"
+                   showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Tab Labels</label>
+                <comment><![CDATA[Customize the display labels for each product tab.]]></comment>
+                <field id="description_label" translate="label comment" type="text" sortOrder="10"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description Tab Label</label>
+                    <comment>Custom label for the Description tab</comment>
+                </field>
+                <field id="more_info_label" translate="label comment" type="text" sortOrder="20"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>More Information Tab Label</label>
+                    <comment>Custom label for the More Information tab</comment>
+                </field>
+                <field id="reviews_label" translate="label comment" type="text" sortOrder="30"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Reviews Tab Label</label>
+                    <comment>Custom label for the Reviews tab</comment>
+                </field>
+            </group>
+
+            <!-- Tab Visibility -->
+            <group id="visibility" translate="label comment" sortOrder="40"
+                   showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Tab Visibility</label>
+                <comment><![CDATA[Show or hide individual product tabs.]]></comment>
+                <field id="show_description" translate="label comment" type="select" sortOrder="10"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Description Tab</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Show or hide the Description tab</comment>
+                </field>
+                <field id="show_more_info" translate="label comment" type="select" sortOrder="20"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show More Information Tab</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Show or hide the More Information tab</comment>
+                </field>
+                <field id="show_reviews" translate="label comment" type="select" sortOrder="30"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Reviews Tab</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Show or hide the Reviews tab</comment>
+                </field>
+            </group>
+
+            <!-- Tab Sort Order -->
+            <group id="sort_order" translate="label comment" sortOrder="50"
+                   showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Tab Sort Order</label>
+                <comment><![CDATA[Set the display order for each tab. Lower numbers appear first.]]></comment>
+                <field id="description_order" translate="label comment" type="text" sortOrder="10"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description Tab Sort Order</label>
+                    <validate>validate-number</validate>
+                    <comment>Sort order for Description tab (default: 10)</comment>
+                </field>
+                <field id="more_info_order" translate="label comment" type="text" sortOrder="20"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>More Information Tab Sort Order</label>
+                    <validate>validate-number</validate>
+                    <comment>Sort order for More Information tab (default: 20)</comment>
+                </field>
+                <field id="reviews_order" translate="label comment" type="text" sortOrder="30"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Reviews Tab Sort Order</label>
+                    <validate>validate-number</validate>
+                    <comment>Sort order for Reviews tab (default: 30)</comment>
+                </field>
+            </group>
+
+            <!-- Custom CMS Block Tabs -->
+            <group id="custom_cms_tabs" translate="label comment" sortOrder="60"
+                   showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Custom CMS Block Tabs</label>
+                <comment><![CDATA[Add custom tabs that display CMS block content.]]></comment>
+                <field id="cms_tabs" translate="label comment" sortOrder="10"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>CMS Block Tabs</label>
+                    <frontend_model>Panth\ProductTabs\Block\Adminhtml\Form\Field\CustomCmsTabs</frontend_model>
+                    <backend_model>Panth\ProductTabs\Model\Config\Backend\DynamicRows</backend_model>
+                    <comment>Add tabs that render CMS block content. Enter 1 for enabled, 0 for disabled.</comment>
+                </field>
+            </group>
+
+            <!-- Custom Attribute Tabs -->
+            <group id="custom_attribute_tabs" translate="label comment" sortOrder="70"
+                   showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Custom Attribute Tabs</label>
+                <comment><![CDATA[Add custom tabs that display product attribute values in a table.]]></comment>
+                <field id="attr_tabs" translate="label comment" sortOrder="10"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Attribute Tabs</label>
+                    <frontend_model>Panth\ProductTabs\Block\Adminhtml\Form\Field\CustomAttributeTabs</frontend_model>
+                    <backend_model>Panth\ProductTabs\Model\Config\Backend\DynamicRows</backend_model>
+                    <comment>Add tabs that display product attributes as a table. Enter comma-separated attribute codes (e.g. material,color,weight). Enter 1 for enabled, 0 for disabled.</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
